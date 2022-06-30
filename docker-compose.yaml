@@ -1,0 +1,14 @@
+version: "3.3"
+services:
+  server-api:
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file: ./config/.env
+    ports:
+      - "8009:8009"
+    volumes:
+      - ./logs:/app/logs
+volumes:
+  logs:
